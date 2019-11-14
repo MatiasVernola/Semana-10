@@ -1,8 +1,11 @@
 <?php
 	session_start();
-
-	$usuarioIngresado = $_GET['inputEmail'];
-	$claveIngresada = $_GET['inputPassword'];
+//include '../funciones/AccesoDatos.php'; //llamo al codigo que esta en accessoDatos.php
+//include './funciones/AccesoDatos.php';
+//include 'istic2019/funciones/AccesoDatos.php';
+include 'AccesoDatos.php';
+	$usuarioIngresado = $_GET['nombre'];
+	$claveIngresada = $_GET['clave'];
 	
 	$booUsuario = 0;
 	$booPassword = 0;
@@ -12,28 +15,36 @@
 		header("Location: ../paginas/login.php?error=camposvacios");
 		exit();
 	}
-	else
+	else 
 	{
-		$archivo = fopen("../archivos/usuarios.txt", "r") or die("Imposible arbrir el archivo");
-	
+		//$select="INSERT INTO usuario (nombre, clave) VALUES ('$miObjeto->nombre', '$miObjeto->clave')";
+		$select="SELECT * FROM `usuario` WHERE nombre = '$usuarioIngresado'  AND clave = '$claveIngresada'";
+		//var_dump($select); die();
+//$consulta = $objetoAccesoDato->RetornarConsulta($select);) or die("Imposible arbrir el archivo");
+	$objetoAccesoDato = AccesoDatos::dameUnobjetoAcceso();
+	$consulta = $objetoAccesoDato->RetornarConsulta($select);
+	$respuesta=$consulta->execute();
+	$datos= $consulta->fetchAll(PDO::FETCH_ASSOC);		
+	//var_dump($consulta); die();
+
+//var_dump($datos[0] ["nombre"]); die();
+
+if(isset($datos[0] ["nombre"]))
+{
+
+ $_SESSION //preguntar solo por el nombre
+
+
+}else
+{
+
+
+
+
+
+}
 		while(!feof($archivo)) 
-		{
-			$objeto = json_decode(fgets($archivo));
-			if ($objeto->usuario == $usuarioIngresado) 
-			{	
-				$booUsuario = 1;
-				if ($objeto->password == $claveIngresada)
-				{
-					fclose($archivo);
-					$_SESSION['usuario']=$objeto->usuario;
-					$_SESSION['perfil']=$objeto->perfil;
-					setcookie("usuario", $_SESSION['usuario'], expires_or_options, path, domain, secure, httponly)
-					header("Location: ../paginas/login.php?exito=signup");
-					exit();
-				}			
-			}
-		 	
-		}	
+		
 		if ($booUsuario == 0) {
 			header("Location: ../paginas/login.php?error=usuarioincorrecto");
 			fclose($archivo);

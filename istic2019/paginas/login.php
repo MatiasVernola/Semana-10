@@ -55,7 +55,7 @@ session_start();
                               
                               <h1 class="h3 mb-3 font-weight-normal">Ingrese sus datos</h1>
                               <label for="inputEmail" class="sr-only">USuario</label>
-                              <input type="text" id="inputEmail"  name="usuario"class="form-control" placeholder="tu usuario" required autofocus>
+                              <input type="text" id="inputEmail"  name="nombre"class="form-control" placeholder="tu usuario" required autofocus>
                               <label for="inputPassword" class="sr-only">Clave</label>
                               <input type="password" id="inputPassword" name="clave" class="form-control" placeholder="la clave secreta" required>
                               <div class="checkbox mb-3">

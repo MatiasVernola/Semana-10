@@ -28,23 +28,34 @@ include 'AccesoDatos.php';
 	//var_dump($consulta); die();
 
 //var_dump($datos[0] ["nombre"]); die();
+}
 
-if(isset($datos[0] ["nombre"]))
+if(isset($datos[0] ["nombre"]) AND isset($datos[0] ["clave"]))
+	var_dump($datos[0] ["clave"]); die ();
 {
 
- $_SESSION //preguntar solo por el nombre
-
-
-}else
-{
-
-
+ $_SESSION ($datos[0] ["nombre"])==$usuarioIngresado;
 
 
 
 }
-		while(!feof($archivo)) 
-		
+fdelse
+{
+   if ($booUsuario == 0) {
+			header("Location: ../paginas/login.php?error=usuarioincorrecto");
+		}
+
+         else 
+	    {
+			header("Location: ../paginas/login.php?error=contraseñaincorrecta");
+		}
+}
+
+
+
+//}
+//		while(!feof($archivo)) 
+/*		
 		if ($booUsuario == 0) {
 			header("Location: ../paginas/login.php?error=usuarioincorrecto");
 			fclose($archivo);
@@ -61,4 +72,5 @@ if(isset($datos[0] ["nombre"]))
 	}	
 	header("Location: ../paginas/login.php");
 	exit();
+*/
 ?>

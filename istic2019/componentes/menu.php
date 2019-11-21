@@ -1,7 +1,16 @@
 
-      <!-- Fixed navbar -->
+       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Alumno</a>
+        <a class="navbar-brand" href="#"><?php if(isset($_SESSION['usuario'])){
+                                              echo $_SESSION['usuario'];
+                                            }
+                                            else
+                                            {
+                                             ?>
+                                             Alumno
+                                            <?php
+                                            }
+                                            ?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-iconx|"></span>
         </button>
@@ -15,16 +24,10 @@
               //solo muestra estos item , si el usuario no esta logeado
             ?>
             <li class="nav-item">
-              <a class="nav-link" href="../paginas/registro.php">Registrate</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/registro.php">Registrate</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="../paginas/login.php">Login</a>
-            </li>
-             <li class="nav-item ">
-              <a class="nav-link" href="/funciones/traerDatos.php">funciones 1</a>
-            </li>
-             <li class="nav-item ">
-              <a class="nav-link" href="../funciones/traerDatos.php">funciones 2</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/login.php">Login</a>
             </li>
             <?php 
             }
@@ -36,15 +39,21 @@
             ?>
 
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/ingresoVehiculo.php">Ingresar Vehiculo</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/cargarvehiculo.php">Ingresar Vehiculo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/facturarVehiculo.php">Facturar Vehiculo</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/vehiculosenestacionamiento.php">Vehiculos estacionados</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/listarUsuarios.php">Listar Usuarios</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/facturar.php">Facturar Vehiculo</a>
+            </li>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/listarVehiculos.php">Listar Vehiculos</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/listausuarios.php">Listar Usuarios</a>
+            <li class="nav-item">
+              <a class="nav-link" href="/istic2019/Session/paginas/facturados.php">Vehiculos facturados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/istic2019/Session/funciones/hacerLogout.php">Cerrar Sesion</a>
             </li>
           
             <?php 
@@ -60,10 +69,10 @@
 
            
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/historicoVehiculos.php">Historial Vehiculos</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/historialvehiculos.php">Historial Vehiculos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/historicoEmpleados.php">Historial Empleados</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/historialusuarios.php">Historial Empleados</a>
             </li>
 
             <?php 
@@ -71,10 +80,6 @@
             ?>
          
           </ul>
-          <form class="form-inline mt-2 mt-md-0" action="/istic2019/Session/funciones/hacerLogout.php">
-            <input class="form-control mr-sm-2" type="text" placeholder="Quien Soy" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Salir</button>
-          </form>
+          
         </div>
       </nav>
- 

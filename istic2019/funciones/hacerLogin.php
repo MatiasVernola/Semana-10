@@ -17,6 +17,55 @@ include 'AccesoDatos.php';
 	}
 	else 
 	{
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+      $consulta =$objetoAccesoDato->RetornarConsulta("select nombre  , clave, perfil  from usuario");
+      $consulta->execute();     
+      $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
+    //$archivo = fopen("../archivos/registro.txt", "r") or die("Imposible arbrir el archivo");
+  
+    //while(!feof($archivo)) 
+    foreach ($datos as $usuario) 
+    {
+      //$objeto = json_decode(fgets($archivo));
+      if ($usuario["nombre"] == $usuarioIngresado) 
+      { 
+        $booUsuario = 1;
+        if ($usuario["clave"] == $claveIngresada)
+        {
+            $booPassword= 1;
+          //fclose($archivo);
+          $_SESSION['usuario']=$usuario["nombre"];
+          $_SESSION['perfil']=$usuario["perfil"];
+          //$_COOKIE['cookiename']=$usuarioIngresado;
+          setcookie("cookie", $_SESSION['usuario']);
+          header("Location: ../paginas/login.php?exito=signup");
+          exit();
+        }     
+      }
+      
+    } 
+    if ($booUsuario == 0) 
+    {
+      header("Location: ../paginas/no.php");
+      exit();
+    }
+    if ($booPassword == 0)
+    {
+            header("Location: ../paginas/no.php");
+      exit();
+    }
+      
+    //fclose($archivo);
+    
+  } 
+  
+  
+?>
+
+
+
+
+
 		//$select="INSERT INTO usuario (nombre, clave) VALUES ('$miObjeto->nombre', '$miObjeto->clave')";
 		$select="SELECT * FROM `usuario` WHERE nombre = '$usuarioIngresado'  AND clave = '$claveIngresada'";
 		//var_dump($select); die();

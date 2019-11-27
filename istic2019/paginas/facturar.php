@@ -59,7 +59,7 @@ session_start();
      <label for="inputEmail" class="sr-only">Patente</label>
      <input type="text" id="patente"  name="patente" pattern="([A-ZÑ]{3}\d{3}|[A-ZÑ]{2}\d{3}[A-ZÑ]{2})$" class="form-control" placeholder="AAA111 o AA123AA" required autofocus>
 
-      <button class="image" type="submit"><img src="https://lowesfacturacion.cfdinova.com.mx/KPortalExterno/lowes-img/Btn-Facturar02.png" width="250" height="60"></button>
+      <button class="image" type="submit"><img src="https://cicde.mx/wp-content/uploads/2018/01/facturacion-por-terceros.png" width="250" height="100"></button>
                              
      <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Facturar</button>-->
                               

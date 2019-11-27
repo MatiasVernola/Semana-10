@@ -81,7 +81,7 @@ session_start();
         //echo "<td>".$objeto->Vehiculo."</td>   <td>".$objeto->fechaEntrada."</td>   <td>".$objeto->fechaSalida."</td>   <td>".$objeto->importe."</td>";
         //echo "</tr>";
       echo "<tr>";
-        echo "<td>".$registrovehiculo['patente']."</td>   <td>".$registrovehiculo['horaingreso']."</td> <td>".$registrovehiculo['id']."</td>";
+        echo "<td>".$registrovehiculo['patente']."</td>   <td>".$registrovehiculo['horaingreso']."</td>";
       //echo "<input type='submit' name='hacer'  value='".$registrovehiculo['id']."'>borrar</input><br>";
         
         

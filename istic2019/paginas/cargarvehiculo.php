@@ -44,7 +44,7 @@ session_start();
                               
                               <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>-->
 
-                              <button class="image" type="submit"><img src="http://testingchile.cl/w3/wp-content/uploads/2015/07/mercadolibre-ingresar.png" width="250" height="60" ></button>
+                              <button class="image" type="submit"><img src="http://inabima.gob.do/wp-content/uploads/2017/05/Ingresar.png" width="250" height="60" ></button>
                               
                               </form>
                             

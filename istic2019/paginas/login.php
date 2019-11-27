@@ -79,7 +79,7 @@ session_start();
       
      <footer class="footer">
     <?php
-        include "componentes/pie.php";
+        include "../componentes/pie.php";
     ?>
     </footer>
 

@@ -8,7 +8,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../imagen.png" >
+    <link rel="icon" href="../imagen.png">
 
     <title>Baja un Cambio S.A</title>
 
@@ -26,13 +26,14 @@ session_start();
     th 
     {
       color:black;
-      background-color: lightblue;
+      background-color: aqua;
     }
     td {color:black;}
     table,th,td 
     {
      border: 3px solid black;
     text-align: center;
+    font-family:Comic Sans MS;
     }
     </style>
 
@@ -48,45 +49,56 @@ session_start();
     <main role="main" class="container">
          
     
-     <em><h3>listado de usuarios registrados</h3></em>
-     <br>
+
 
 
       <table style="width:100%">
 
        <tr>
-            <th>usuarios</th>
-            
+            <th>Vehiculo</th>
+            <th>Fecha/Hora Ingreso</th>
+            <th>Fecha/Hora Salida</th>
+            <th>Total Cobrado</th>
           </tr>
 
 
-      
+
 <?php
   include '../funciones/AccesoDatos.php';
-      $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-      $consulta =$objetoAccesoDato->RetornarConsulta("select nombre  from usuario");
-      $consulta->execute();     
-      $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
-    //$archivo = fopen("../archivos/registro.txt", "r");
+  $cantidadAutos=0;
+  $totalFacturado = 0;
+  date_default_timezone_set('America/Argentina/Buenos_Aires');
+  $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+  $consulta =$objetoAccesoDato->RetornarConsulta("select patente  , horaingreso, horasalida,importe  from vehiculosfacturados");
+  $consulta->execute();     
+  $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
+    //$archivo = fopen("../archivos/facturados.txt", "r");
     //while(!feof($archivo)) 
-    foreach ($datos as $usuario)  
+    foreach ($datos as $vehiculosfacturados)
     {
       //$objeto = json_decode(fgets($archivo));
       //if ($objeto != "") 
       //{
-        echo "<tr>";
-        echo "<td>".$usuario['nombre']."</td>";   
+        //echo "<tr>";
+        //echo "<td>".$objeto->Vehiculo."</td>   <td>".$objeto->fechaEntrada."</td>   <td>".$objeto->fechaSalida."</td>   <td>".$objeto->importe."</td>";
+        //echo "</tr>";
+      echo "<tr>";
+        echo "<td>".$vehiculosfacturados['patente']."</td>   <td>".$vehiculosfacturados['horaingreso']."</td>   <td>".$vehiculosfacturados['horasalida']."</td>   <td>".$vehiculosfacturados['importe']."</td>";
         echo "</tr>";
-        
-        
-      //}
+        $totalFacturado = $totalFacturado + $vehiculosfacturados['importe'];
+        $cantidadAutos = $cantidadAutos + 1;
+        //$_SESSION['estacionados'] = $cantidadAutos;
+      
     }
     echo "</table>";
-    
-   // fclose($archivo);
+ 
+    echo "<h2> TOTAL FACTURADO: $".$totalFacturado."</h2>";
+    //fclose($archivo);
   ?>
 
+
     </main>
+  </body>
       
      <footer class="footer">
     <?php

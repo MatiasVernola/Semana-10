@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2019 a las 02:12:09
--- Versión del servidor: 10.3.16-MariaDB
--- Versión de PHP: 7.3.7
+-- Tiempo de generación: 27-11-2019 a las 20:57:28
+-- Versión del servidor: 10.1.37-MariaDB
+-- Versión de PHP: 5.6.39
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `registrovehiculo` (
+  `id` int(10) NOT NULL,
   `patente` varchar(8) NOT NULL,
   `horaingreso` int(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -37,8 +38,10 @@ CREATE TABLE `registrovehiculo` (
 -- Volcado de datos para la tabla `registrovehiculo`
 --
 
-INSERT INTO `registrovehiculo` (`patente`, `horaingreso`) VALUES
-('NBB222', 26);
+INSERT INTO `registrovehiculo` (`id`, `patente`, `horaingreso`) VALUES
+(1, '', 26),
+(2, '', 27),
+(3, 'BBB111', 27);
 
 -- --------------------------------------------------------
 
@@ -64,7 +67,9 @@ INSERT INTO `usuario` (`id`, `nombre`, `clave`) VALUES
 (5, 'matias', '123'),
 (6, 'matias', ''),
 (7, 'cristian', '456'),
-(8, 'cristian', '');
+(8, 'cristian', ''),
+(9, 'regelio', 'rogelio'),
+(10, 'regelio', '');
 
 -- --------------------------------------------------------
 
@@ -74,12 +79,29 @@ INSERT INTO `usuario` (`id`, `nombre`, `clave`) VALUES
 
 CREATE TABLE `vehiculosfacturados` (
   `patente` varchar(8) NOT NULL,
-  `horasalida` int(50) NOT NULL
+  `horaingreso` int(50) NOT NULL,
+  `horasalida` int(50) NOT NULL,
+  `importe` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `vehiculosfacturados`
+--
+
+INSERT INTO `vehiculosfacturados` (`patente`, `horaingreso`, `horasalida`, `importe`) VALUES
+('GGG777', 27, 27, 4374675),
+('GGG777', 27, 27, 4374676),
+('BBB111', 27, 27, 4374679);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `registrovehiculo`
+--
+ALTER TABLE `registrovehiculo`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `usuario`
@@ -92,10 +114,16 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `registrovehiculo`
+--
+ALTER TABLE `registrovehiculo`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

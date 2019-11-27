@@ -9,7 +9,6 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../imagen.png" >
-    
 
     <title>Baja un Cambio S.A</title>
 
@@ -22,9 +21,24 @@ session_start();
 
   </head>
 
+      <style>
+   
+    th 
+    {
+      color:black;
+      background-color: lightgreen;
+    }
+    td {color:black;}
+    table,th,td 
+    {
+     border: 3px solid black;
+    text-align: center;
+    }
+    </style>
+
   <body>
 
-   <header>
+    <header>
     <?php
         include "../componentes/menu.php";
     ?>
@@ -32,25 +46,51 @@ session_start();
 
     <!-- Begin page content -->
     <main role="main" class="container">
+         
+    
+     <h3>listado de usuarios registrados</h3>
+     <br>
 
-      <form action="../funciones/hacerRegistro.php" class="form-signin">
-        
-      <div class="text-center mb-4">
-        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
 
-      </div>     
-        <input type="text" name="nombre" class="form-control" placeholder="Usuario" required autofocus>
-        <input type="password" name="clave" class="form-control" placeholder="Password" required>
+      <table style="width:100%">
 
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+       <tr>
+            <th>usuarios</th>
+            
+          </tr>
+
+
       
-    </form> 
-    </main>
+<?php
+  include '../funciones/accesoadatos.php';
+      $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+      $consulta =$objetoAccesoDato->RetornarConsulta("select nombre  from usuario");
+      $consulta->execute();     
+      $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
+    //$archivo = fopen("../archivos/registro.txt", "r");
+    //while(!feof($archivo)) 
+    foreach ($datos as $usuario)  
+    {
+      //$objeto = json_decode(fgets($archivo));
+      //if ($objeto != "") 
+      //{
+        echo "<tr>";
+        echo "<td>".$usuario['nombre']."</td>";   
+        echo "</tr>";
+        
+        
+      //}
+    }
+    echo "</table>";
+    
+   // fclose($archivo);
+  ?>
 
-    <footer class="footer">
+    </main>
+      
+     <footer class="footer">
     <?php
-        include "componentes/pie.php";
+        include "../componentes/pie.php";
     ?>
     </footer>
 
@@ -60,7 +100,7 @@ session_start();
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" cAlumnorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
   </body>
 </html>

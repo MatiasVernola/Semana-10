@@ -18,7 +18,7 @@ include 'AccesoDatos.php';
 	else 
 	{
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-      $consulta =$objetoAccesoDato->RetornarConsulta("select nombre  , clave, perfil  from usuario");
+      $consulta =$objetoAccesoDato->RetornarConsulta("select nombre  , clave  from usuario");
       $consulta->execute();     
       $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
     //$archivo = fopen("../archivos/registro.txt", "r") or die("Imposible arbrir el archivo");

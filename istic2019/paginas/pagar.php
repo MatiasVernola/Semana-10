@@ -24,7 +24,7 @@ session_start();
 
   <body>
 
-   <header>
+    <header>
     <?php
         include "../componentes/menu.php";
     ?>
@@ -32,23 +32,32 @@ session_start();
 
     <!-- Begin page content -->
     <main role="main" class="container">
+         
+      <form action="hacerfacturar.php"> 
 
-      <form action="../funciones/hacerRegistro.php" class="form-signin">
+      <h1>Cobrar</h1>
+
+      <?php
+          date_default_timezone_set('America/Argentina/Buenos_Aires');
         
-      <div class="text-center mb-4">
-        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
-
-      </div>     
-        <input type="text" name="nombre" class="form-control" placeholder="Usuario" required autofocus>
-        <input type="password" name="clave" class="form-control" placeholder="Password" required>
-
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-      
-    </form> 
+          $patente = $_GET["patente"];
+          $cobrar = $_GET['cobrar'];
+          $ingreso = $_GET['ingreso'];
+          $salida = $_GET['salida'];
+          echo "Vehiculo: ".$patente."<br>";
+          echo "Hora de ingreso: ".$ingreso."<br>";
+          echo "Hora de salida: ".$salida."<br>";
+          echo "Cobrar: $".$cobrar."<br>";
+        
+          ?>
+            <br>
+            <br>
+            <a href="../paginas/facturar.php"><h4>Facturar Otro Vehiculo</h4></a>
+            <a href="../index.php"><h4>Volver al Inicio</h4></a>
+        
     </main>
-
-    <footer class="footer">
+      
+     <footer class="footer">
     <?php
         include "componentes/pie.php";
     ?>
@@ -60,7 +69,7 @@ session_start();
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" cAlumnorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
   </body>
 </html>

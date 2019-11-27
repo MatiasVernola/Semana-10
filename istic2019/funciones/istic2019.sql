@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 29-10-2019 a las 23:56:15
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.4
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 27-11-2019 a las 02:12:09
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,24 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `istic2019`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `registrovehiculo`
+--
+
+CREATE TABLE `registrovehiculo` (
+  `patente` varchar(8) NOT NULL,
+  `horaingreso` int(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `registrovehiculo`
+--
+
+INSERT INTO `registrovehiculo` (`patente`, `horaingreso`) VALUES
+('NBB222', 26);
 
 -- --------------------------------------------------------
 
@@ -42,7 +60,22 @@ INSERT INTO `usuario` (`id`, `nombre`, `clave`) VALUES
 (1, 'usuario', 'usuario'),
 (2, 'admin', 'admin'),
 (3, 'empleado1', 'empleado1'),
-(4, 'empleado2', 'empleado2');
+(4, 'empleado2', 'empleado2'),
+(5, 'matias', '123'),
+(6, 'matias', ''),
+(7, 'cristian', '456'),
+(8, 'cristian', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vehiculosfacturados`
+--
+
+CREATE TABLE `vehiculosfacturados` (
+  `patente` varchar(8) NOT NULL,
+  `horasalida` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Índices para tablas volcadas
@@ -62,7 +95,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

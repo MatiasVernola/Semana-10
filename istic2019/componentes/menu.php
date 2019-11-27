@@ -17,17 +17,17 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/index.php">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/istic2019/index.php">Inicio <span class="sr-only">(current)</span></a>
             </li>
               <?php 
             if(isset($_SESSION['usuario'])==false){
               //solo muestra estos item , si el usuario no esta logeado
             ?>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/registro.php">Registrate</a>
+              <a class="nav-link" href="/istic2019/paginas/registro.php">Registrate</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="/istic2019/Session/paginas/login.php">Login</a>
+              <a class="nav-link" href="/istic2019/paginas/login.php">Login</a>
             </li>
             <?php 
             }
@@ -39,21 +39,21 @@
             ?>
 
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/cargarvehiculo.php">Ingresar Vehiculo</a>
+              <a class="nav-link" href="/istic2019/paginas/cargarvehiculo.php">Ingresar Vehiculo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/vehiculosenestacionamiento.php">Vehiculos estacionados</a>
+              <a class="nav-link" href="/istic2019/paginas/vehiculosenestacionamiento.php">Vehiculos estacionados</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/facturar.php">Facturar Vehiculo</a>
+              <a class="nav-link" href="/istic2019/paginas/facturar.php">Facturar Vehiculo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/listausuarios.php">Listar Usuarios</a>
+              <a class="nav-link" href="/istic2019/paginas/listausuarios.php">Listar Usuarios</a>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/facturados.php">Vehiculos facturados</a>
+              <a class="nav-link" href="/istic2019/paginas/facturados.php">Vehiculos facturados</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/funciones/hacerLogout.php">Cerrar Sesion</a>
+              <a class="nav-link" href="/istic2019/funciones/hacerLogout.php">Cerrar Sesion</a>
             </li>
           
             <?php 

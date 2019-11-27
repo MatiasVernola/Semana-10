@@ -1,10 +1,10 @@
 <?php
-include 'accesoadatos.php';
+include 'AccesoDatos.php';
 $precio=10;
 $patente2 = $_GET['patente'];
 $bandera=0;
       $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-      $consulta =$objetoAccesoDato->RetornarConsulta("select id ,patente  , horaingreso  from registrovehiculo");
+      $consulta =$objetoAccesoDato->RetornarConsulta("select patente  , horaingreso  from registrovehiculo");
       $consulta->execute();     
       $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 //$archivo = fopen('../archivos/vehiculos.txt', 'r');

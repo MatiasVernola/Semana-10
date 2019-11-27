@@ -1,5 +1,5 @@
 <?php
-include 'accesoadatos.php';
+include 'AccesoDatos.php';
  $miObjeto2 = new stdClass();
  date_default_timezone_set('America/Argentina/Buenos_Aires');
  $hora=mktime();
@@ -16,7 +16,7 @@ include 'accesoadatos.php';
 		{
 			if($registrovehiculo["patente"]==$miObjeto2->patente)
 			{
-				header("Location: ../paginas/vehiculoyaestacionado.php");
+				header("Location: ../paginas/ok.php");
 		        exit();
 			}
 		}
@@ -24,7 +24,7 @@ include 'accesoadatos.php';
     $select="INSERT INTO registrovehiculo ( patente, horaingreso) VALUES ('$miObjeto2->patente','$miObjeto2->horaIngreso')";
     $consulta =$objetoAccesoDato->RetornarConsulta($select);
     $consulta->execute();
-    header("Location: ../paginas/okregistrovehiculo.php");
+    header("Location: ../paginas/ok.php");
  
  //$archivo = fopen('../archivos/vehiculos.txt', 'a');
  //fwrite($archivo, json_encode($miObjeto2)."\n");

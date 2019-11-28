@@ -19,6 +19,17 @@ session_start();
     <link href="../css/sticky-footer-navbar.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="../css/floating-labels.css" rel="stylesheet">
+  
+
+
+    <style>
+      body
+      {background-image: url("http://www.testdelayer.com.ar/pruebas/ika-torino-gs-200.JPG");
+         background-size: cover;
+        }
+         h2{  color:white;}
+       
+     </style>
 
   </head>
 
@@ -33,11 +44,11 @@ session_start();
     <!-- Begin page content -->
     <main role="main" class="container">
          
-                              <div align="center"><img src="https://autoblog.com.ar/wp-content/uploads/2015/07/PATENTE.jpg" width=100 height=100></div><br>
+                              <!--<div align="center"><img src="https://autoblog.com.ar/wp-content/uploads/2015/07/PATENTE.jpg" width=100 height=100></div><br>-->
 
                               <form class="form-signin" action="../funciones/hacervehiculo.php">
-                              
-                              <h1 class="h3 mb-3 font-weight-normal">Ingrese patente del vehiculo</h1>
+                             
+                              <h1 class="h3 mb-3 font-weight-normal"><h2>Ingrese la patente del vehiculo</h2></h1>
                               <label for="inputEmail" class="sr-only">Patente</label>
                               <input type="text" id="patente"  name="patente" pattern="([A-ZÑ]{3}\d{3}|[A-ZÑ]{2}\d{3}[A-ZÑ]{2})$" class="form-control" placeholder="AAA111 o AA123AA" required autofocus>
                              

@@ -1,6 +1,6 @@
 <?php
 include 'AccesoDatos.php';
-$precio=10;
+$precio=5;
 $patente2 = $_GET['patente'];
 $bandera=0;
       $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
@@ -40,7 +40,8 @@ $bandera=0;
             $consulta->execute();
             //$id=$registrovehiculo['id'];
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-            $select="DELETE FROM `registrovehiculo` WHERE id=$id";
+
+            $select="DELETE FROM `registrovehiculo` WHERE id='$id'";
             $consulta =$objetoAccesoDato->RetornarConsulta($select);
             $consulta->execute();
        

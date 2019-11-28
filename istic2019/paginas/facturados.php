@@ -19,10 +19,17 @@ session_start();
     <!-- Custom styles for this template -->
     <link href="../css/floating-labels.css" rel="stylesheet">
 
+
+
   </head>
 
       <style>
    
+       body
+      {background-image: url("http://www.testdelayer.com.ar/pruebas/ika-torino-gs-200.JPG");
+         background-size: cover;
+        }
+
     th 
     {
       color:black;
@@ -33,7 +40,8 @@ session_start();
     {
      border: 3px solid black;
     text-align: center;
-    font-family:Comic Sans MS;
+    font-family:Times;
+    background-color: white;
     }
     </style>
 

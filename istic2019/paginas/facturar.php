@@ -22,6 +22,14 @@ session_start();
   </head>
 
   <style>
+
+      body
+      {background-image: url("http://www.testdelayer.com.ar/pruebas/ika-torino-gs-200.JPG");
+         background-size: cover;
+        }
+         h1{  color:white;}
+       
+    
    
     th 
     {
@@ -33,6 +41,7 @@ session_start();
     {
      border: 3px solid black;
     text-align: center;
+    background-color: lightblue;
     }
     </style>
 
@@ -51,7 +60,7 @@ session_start();
 
      <div class="col-sm-4">
         
-     <div align="center"><img src="https://autoblog.com.ar/wp-content/uploads/2015/07/PATENTE.jpg" width=100 height=100></div><br>
+     
 
      <form class="form-signin" action="../funciones/hacerfacturar.php">
                               
@@ -92,7 +101,7 @@ session_start();
          foreach ($datos as $registrovehiculo)
          {
           echo "<tr>";
-          echo "<td>".$registrovehiculo['patente']."</td>   <td>".$registrovehiculo['horaingreso']."</td> <td>".$registrovehiculo['id']."</td>";
+          echo "<td>".$registrovehiculo['id']."</td> <td>".$registrovehiculo['patente']."</td>   <td>".$registrovehiculo['horaingreso']."</td>";
           //echo "<input type='submit' name='hacer'  value='".$registrovehiculo['id']."'>borrar</input><br>";
          }
         echo "</table>";

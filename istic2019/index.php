@@ -21,8 +21,17 @@ session_start();
     <!-- Custom styles for this template -->
     <link href="css/floating-labels.css" rel="stylesheet">
 
-  </head>
+ <style>
+    body
+    {
+      background-image: url("https://www.pdfshoots.com/wp-content/uploads/2019/08/Gallego-4.jpg");
+      background-size: cover;
+    }
+     h1, p
+      {color:white;}
 
+  </head>
+</style>
   <body>
 
     <header>
@@ -34,19 +43,14 @@ session_start();
     <!-- Begin page content -->
     <main role="main" class="container">
 
-        <img src="e.jpg" borde="0" height="500" width="500" > 
-         
+                
       <h1 class="mt-5">baja un cambio s.a</h1>
       <p class="lead">Bienvenido a Estacionamientos baja un cambio</p>
 
 
     </main>
       
-    <footer class="footer">
-    <?php
-        include "componentes/pie.php";
-    ?>
-    </footer>
+    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

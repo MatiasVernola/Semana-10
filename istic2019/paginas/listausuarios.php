@@ -22,7 +22,10 @@ session_start();
   </head>
 
       <style>
-   
+   body
+   {background-image: url("https://scontent-eze1-1.xx.fbcdn.net/v/t1.0-9/13620708_1127731270603461_1202373994451962987_n.jpg?_nc_cat=100&_nc_ohc=fU9gZzCuwHoAQn3PYW3J3Fjm2rwSc0QUbXLnawLKRL9YP7gTeYLjWEAhg&_nc_ht=scontent-eze1-1.xx&oh=6f5d0e3ab0bfcb37cb3a1cda54dd2a8b&oe=5E79B05E");
+         background-size: cover;
+    }
     th 
     {
       color:black;
@@ -33,6 +36,7 @@ session_start();
     {
      border: 3px solid black;
     text-align: center;
+    background-color: white;
     }
     </style>
 

@@ -20,6 +20,17 @@ session_start();
     <!-- Custom styles for this template -->
     <link href="../css/floating-labels.css" rel="stylesheet">
 
+    <style>
+      body
+      {background-image: url("https://scontent-eze1-1.xx.fbcdn.net/v/t1.0-9/13620708_1127731270603461_1202373994451962987_n.jpg?_nc_cat=100&_nc_ohc=fU9gZzCuwHoAQn3PYW3J3Fjm2rwSc0QUbXLnawLKRL9YP7gTeYLjWEAhg&_nc_ht=scontent-eze1-1.xx&oh=6f5d0e3ab0bfcb37cb3a1cda54dd2a8b&oe=5E79B05E");
+        background-size: cover;
+      }
+      h1, p, h2, h3
+      {color:white;}
+      
+
+    </style>
+
   </head>
 
   <body>
@@ -33,7 +44,7 @@ session_start();
     <!-- Begin page content -->
     <main role="main" class="container">
          
-      <h1 class="mt-5">Estacionamiento ISTIC 2019</h1>
+      <h1 class="mt-5"> Estacionamiento Baja un Cambio S.A</h1>
       <p class="lead">Bienvenido a Estacionamientos Alumno</p>
 
         
@@ -64,8 +75,8 @@ session_start();
                                   <input type="checkbox" value="remember-me"> Recordarme
                                 </label>
                               </div>
-                              <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-                              <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+                              <button class="image" type="submit"> <img src="https://lh3.googleusercontent.com/2Su-btecpAek3kd5oKWsCQ9fhFPBXWqKNS2eeSJdgkcWqsA2BzuuQckfv4BH3_CoGXx_WDVhUGEpmIoqdQKR3Qyr9DZvVhRaP0J6StSvsVQk6VelEYQ15TXsh3p665XGjTb0S7J8"></button>
+                              <p class="mt-5 mb-3 text-muted"></p>
                               </form>
                             
 
@@ -77,12 +88,12 @@ session_start();
 
     </main>
       
-     <footer class="footer">
+    <!-- <footer class="footer">
     <?php
-        include "../componentes/pie.php";
+        //include "../componentes/pie.php";
     ?>
     </footer>
-
+    -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

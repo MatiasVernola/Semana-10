@@ -24,7 +24,7 @@ session_start();
   <style>
 
       body
-      {background-image: url("http://www.testdelayer.com.ar/pruebas/ika-torino-gs-200.JPG");
+      {background-image: url("https://scontent-eze1-1.xx.fbcdn.net/v/t1.0-9/13620708_1127731270603461_1202373994451962987_n.jpg?_nc_cat=100&_nc_ohc=fU9gZzCuwHoAQn3PYW3J3Fjm2rwSc0QUbXLnawLKRL9YP7gTeYLjWEAhg&_nc_ht=scontent-eze1-1.xx&oh=6f5d0e3ab0bfcb37cb3a1cda54dd2a8b&oe=5E79B05E");
          background-size: cover;
         }
          h1{  color:white;}
@@ -64,7 +64,7 @@ session_start();
 
      <form class="form-signin" action="../funciones/hacerfacturar.php">
                               
-     <h1 class="h3 mb-3 font-weight-normal">Facturar Vehiculo</h1>
+     <h1   class="h3 mb-3font-weight-normal">Facturar Vehiculo</h1>
      <label for="inputEmail" class="sr-only">Patente</label>
      <input type="text" id="patente"  name="patente" pattern="([A-ZÑ]{3}\d{3}|[A-ZÑ]{2}\d{3}[A-ZÑ]{2})$" class="form-control" placeholder="AAA111 o AA123AA" required autofocus>
 
@@ -95,7 +95,7 @@ session_start();
          date_default_timezone_set('America/Argentina/Buenos_Aires');
         
          $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-         $consulta =$objetoAccesoDato->RetornarConsulta("select patente  , horaingreso  from registrovehiculo");
+         $consulta =$objetoAccesoDato->RetornarConsulta("select id, patente  , horaingreso  from registrovehiculo");
          $consulta->execute();     
          $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
          foreach ($datos as $registrovehiculo)

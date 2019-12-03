@@ -20,6 +20,16 @@ session_start();
     <!-- Custom styles for this template -->
     <link href="../css/floating-labels.css" rel="stylesheet">
 
+<style>
+
+      body
+      {background-image: url("https://scontent-eze1-1.xx.fbcdn.net/v/t1.0-9/13620708_1127731270603461_1202373994451962987_n.jpg?_nc_cat=100&_nc_ohc=fU9gZzCuwHoAQn3PYW3J3Fjm2rwSc0QUbXLnawLKRL9YP7gTeYLjWEAhg&_nc_ht=scontent-eze1-1.xx&oh=6f5d0e3ab0bfcb37cb3a1cda54dd2a8b&oe=5E79B05E");
+         background-size: cover;
+        }
+         h1{  color:white;}
+</style>
+
+
   </head>
 
   <body>
@@ -43,17 +53,18 @@ session_start();
         <input type="text" name="nombre" class="form-control" placeholder="Usuario" required autofocus>
         <input type="password" name="clave" class="form-control" placeholder="Password" required>
 
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+      <button class="image" type="submit" > <img src="https://lh3.googleusercontent.com/2Su-btecpAek3kd5oKWsCQ9fhFPBXWqKNS2eeSJdgkcWqsA2BzuuQckfv4BH3_CoGXx_WDVhUGEpmIoqdQKR3Qyr9DZvVhRaP0J6StSvsVQk6VelEYQ15TXsh3p665XGjTb0S7J8" > </button>
       
     </form> 
     </main>
 
+  <!--
     <footer class="footer">
     <?php
-        include "componentes/pie.php";
+       // include "../componentes/pie.php";
     ?>
     </footer>
-
+        -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -22,7 +22,11 @@ session_start();
   </head>
 
       <style>
-   
+       body
+      {
+      background-image: url("https://www.pdfshoots.com/wp-content/uploads/2019/08/Gallego-4.jpg");
+      background-size: cover;
+      }
     th 
     {
       color:black;
@@ -33,6 +37,7 @@ session_start();
     {
      border: 3px solid black;
     text-align: center;
+    background-color: white;
     }
     </style>
 

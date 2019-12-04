@@ -29,7 +29,8 @@ session_start();
       {background-image: url("http://www.testdelayer.com.ar/pruebas/ika-torino-gs-200.JPG");
          background-size: cover;
         }
-
+       h2
+       {color:aqua;}
     th 
     {
       color:black;

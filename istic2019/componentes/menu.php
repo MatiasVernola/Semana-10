@@ -1,6 +1,6 @@
 
        <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-danger font-family:Helvetica">
         <a class="navbar-brand" href="#"><?php if(isset($_SESSION['usuario'])){
                                               echo $_SESSION['usuario'];
                                             }

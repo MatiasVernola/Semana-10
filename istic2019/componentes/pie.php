@@ -8,7 +8,7 @@
 ?>
 
 <div class="container">
-        <span class="text-muted">Bienvenido   <?php echo $_SESSION['usuario'];?>   </span>  <span class="text-muted">otro datos como fecha y hora de ingreso, total de autos estacionados, datos que todo el tiempo deben estar en pantalla</span>
+        <span class="text-muted">Bienvenido   <?php echo $_SESSION['usuario'];?>   </span>  <span class="text-muted">Gracias por utilizar nuestra plataforma </span>
 </div>
 
 <?php 

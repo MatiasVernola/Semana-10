@@ -66,7 +66,7 @@ session_start();
                               
      <h1   class="h3 mb-3font-weight-normal">Facturar Vehiculo</h1>
      <label for="inputEmail" class="sr-only">Patente</label>
-     <input type="text" id="patente"  name="patente" pattern="([A-ZÑ]{3}\d{3}|[A-ZÑ]{2}\d{3}[A-ZÑ]{2})$" class="form-control" placeholder="AAA111 o AA123AA" required autofocus>
+     <input type="text" id="id"  name="patente" pattern="([A-ZÑ]{3}\d{3}|[A-ZÑ]{2}\d{3}[A-ZÑ]{2})$" class="form-control" placeholder="AAA111 o AA123AA" required autofocus>
 
       <button class="image" type="submit"><img src="https://cicde.mx/wp-content/uploads/2018/01/facturacion-por-terceros.png" width="250" height="100"></button>
                              

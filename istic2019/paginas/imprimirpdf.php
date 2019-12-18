@@ -1,7 +1,7 @@
 <?php
 //require('fpdf.php');
 //include 'fpdf.php'
-require'fpdf/fpdf.php'
+require'../fpdf/fpdf.php';
 
 //echo ("hola");
 class PDF extends FPDF 

@@ -23,7 +23,10 @@ session_start();
   </head>
 
       <style>
-   
+   body
+      {background-image: url("https://scontent-eze1-1.xx.fbcdn.net/v/t1.0-9/13620708_1127731270603461_1202373994451962987_n.jpg?_nc_cat=100&_nc_ohc=fU9gZzCuwHoAQn3PYW3J3Fjm2rwSc0QUbXLnawLKRL9YP7gTeYLjWEAhg&_nc_ht=scontent-eze1-1.xx&oh=6f5d0e3ab0bfcb37cb3a1cda54dd2a8b&oe=5E79B05E");
+         background-size: cover;
+        }
     th 
     {
       color:black;
@@ -34,10 +37,15 @@ session_start();
     {
      border: 3px solid black;
     text-align: center;
+    background-color: white;
     }
     </style>
 
   <body>
+
+     <li class="nav-item">
+              <a class="nav-link" href="/istic2019/paginas/imprimirpdf.php">imprimir PDF</a>
+            </li>
 
     <header>
     <?php
@@ -67,7 +75,7 @@ session_start();
 
 
 <?php
-  include '../funciones/accesoadatos.php';
+  include '../funciones/AccesoDatos.php';
   date_default_timezone_set('America/Argentina/Buenos_Aires');
   $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
   $consulta =$objetoAccesoDato->RetornarConsulta("select id ,patente  , horaingreso, horasalida,importe  from vehiculosfacturados");
@@ -87,12 +95,12 @@ session_start();
 
     </main>
       
-     <footer class="footer">
+    <!-- <footer class="footer">
     <?php
-        include "../componentes/pie.php";
+        //include "../componentes/pie.php";
     ?>
-    </footer>
-
+    </footer> -->
+ 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
